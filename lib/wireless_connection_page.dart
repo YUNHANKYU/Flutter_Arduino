@@ -28,8 +28,8 @@ class _WirelessConnectionPageState extends State<WirelessConnectionPage> {
   BluetoothDevice? _device;
 
   Map<String, String> a = {
-    'smarthome1': '98:D3:61:F9:57:A4',
-    'smarthome2': '98:D3:51:F9:4E:D9',
+    'smarthome1': '98:D3:61:F9:57:A4', //636AA
+    'smarthome2': '98:D3:51:F9:4E:D9', //K742US
   };
 
   @override
