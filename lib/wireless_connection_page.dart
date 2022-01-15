@@ -27,6 +27,11 @@ class _WirelessConnectionPageState extends State<WirelessConnectionPage> {
 
   BluetoothDevice? _device;
 
+  Map<String, String> a = {
+    'smarthome1': '98:D3:61:F9:57:A4',
+    'smarthome2': '98:D3:51:F9:4E:D9',
+  };
+
   @override
   void initState() {
     super.initState();
@@ -91,6 +96,7 @@ class _WirelessConnectionPageState extends State<WirelessConnectionPage> {
     setState(() {
       _devicesList =
           devices.where((BluetoothDevice e) => e.name!.contains('HC')).toList();
+      print(_devicesList[0].address);
     });
   }
 
@@ -117,14 +123,6 @@ class _WirelessConnectionPageState extends State<WirelessConnectionPage> {
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[
-            Visibility(
-              visible: !_bluetoothState.isEnabled &&
-                  _bluetoothState == BluetoothState.STATE_ON,
-              child: LinearProgressIndicator(
-                backgroundColor: Colors.yellow,
-                valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
-              ),
-            ),
             Column(
               children: <Widget>[
                 Padding(
